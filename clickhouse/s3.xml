@@ -1,0 +1,8 @@
+<clickhouse>
+    <s3>
+        <endpoint_name>nexus</endpoint_name>
+        <endpoint>https://s3.eu-west-2.amazonaws.com/</endpoint>
+        <access_key_id></access_key_id>
+        <secret_access_key></secret_access_key>
+    </s3>
+</clickhouse>

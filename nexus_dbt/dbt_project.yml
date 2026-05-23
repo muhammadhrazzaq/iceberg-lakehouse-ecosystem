@@ -1,0 +1,23 @@
+name: 'nexus_dbt'
+version: '1.0.0'
+config-version: 2
+
+profile: 'nexus_dbt'
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+
+target-path: "target"
+clean-targets: ["target", "dbt_packages"]
+
+models:
+  nexus_dbt:
+    staging:
+      +materialized: view       # staging = views, fast to build
+      # +schema: staging
+    marts:
+      +materialized: table      # marts = tables, fast to query
+      # +schema: marts

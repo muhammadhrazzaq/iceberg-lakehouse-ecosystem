@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: mart_repo_daily
+    description: "Daily aggregated stats per repository"
+    columns:
+      - name: repo_name
+        tests:
+          - not_null
+      - name: event_date
+        tests:
+          - not_null
+      - name: total_events
+        tests:
+          - not_null

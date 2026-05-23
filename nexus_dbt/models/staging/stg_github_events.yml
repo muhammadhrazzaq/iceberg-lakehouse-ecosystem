@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: stg_github_events
+    description: "Cleaned and typed GitHub events from S3"
+    columns:
+      - name: event_id
+        description: "Unique event ID"
+        tests:
+          - not_null
+          - unique
+      - name: event_type
+        description: "GitHub event type"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['pushevent','pullrequestevent','issuesevent','watchevent','forkevent']
+      - name: repo_name
+        tests:
+          - not_null
+      - name: actor_login
+        tests:
+          - not_null
+      - name: created_at
+        tests:
+          - not_null

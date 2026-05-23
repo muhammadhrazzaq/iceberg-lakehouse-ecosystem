@@ -1,0 +1,33 @@
+# Core streaming
+pyspark==3.5.3
+kafka-python-ng==2.2.3
+fastavro==1.9.4
+
+# Iceberg + AWS — let pip resolve s3fs version
+pyiceberg[s3fs]==0.11.1
+boto3==1.34.69
+
+# Schema registry
+requests==2.31.0
+
+# Environment
+python-dotenv==1.0.1
+
+# Neo4j
+neo4j==5.19.0
+
+# ClickHouse
+clickhouse-connect==0.7.16
+
+# dbt
+dbt-core
+dbt-clickhouse
+
+# LLM
+anthropic==0.28.0
+
+# Data
+pyarrow==17.0.0
+pandas==2.2.2
+
+great-expectations==0.18.19

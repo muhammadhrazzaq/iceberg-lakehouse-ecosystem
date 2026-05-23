@@ -1,0 +1,21 @@
+version: 2
+
+sources:
+  - name: raw
+    description: "Raw GitHub events from S3 via ClickHouse s3() function"
+    tables:
+      - name: github_events
+        description: "Raw Avro events written by PySpark to Iceberg on S3"
+        columns:
+          - name: event_id
+            description: "Unique event identifier"
+          - name: event_type
+            description: "GitHub event type"
+          - name: repo_name
+            description: "Repository full name (owner/repo)"
+          - name: actor_login
+            description: "GitHub username who triggered the event"
+          - name: created_at
+            description: "Event timestamp"
+          - name: stars
+            description: "Star count at time of event"

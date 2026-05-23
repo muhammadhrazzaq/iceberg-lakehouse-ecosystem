@@ -1,11 +1,22 @@
-import json, uuid, random, time, io, requests
+import json, uuid, random, time, io, requests, os, sys
 from datetime import datetime, timezone
 from kafka import KafkaProducer
 import fastavro
 
-REGISTRY_URL     = "http://localhost:8081"
-BOOTSTRAP_SERVER = "localhost:19092"   # external listener
+# Force unbuffered output for Docker logs
+sys.stdout.reconfigure(line_buffering=True)
+print(f"Starting producer...")
+print(f"  Broker  : {os.environ.get('KAFKA_BROKER', 'not set')}")
+print(f"  Registry: {os.environ.get('REGISTRY_URL', 'not set')}")
+# ── Config from env vars ──────────────────────────────────
+REGISTRY_URL     = os.environ.get("REGISTRY_URL",  "http://localhost:8081")
+BOOTSTRAP_SERVER = os.environ.get("KAFKA_BROKER",  "localhost:19092")
 TOPIC            = "github-events"
+INTERVAL         = float(os.environ.get("PRODUCE_INTERVAL", "0.5"))
+
+print(f"Starting producer...")
+print(f"  Broker  : {BOOTSTRAP_SERVER}")
+print(f"  Registry: {REGISTRY_URL}")
 
 # Fetch schema from registry at startup
 resp = requests.get(f"{REGISTRY_URL}/subjects/{TOPIC}-value/versions/latest")

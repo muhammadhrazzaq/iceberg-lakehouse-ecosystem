@@ -1,3 +1,0 @@
-{
-  "schema": "{\"type\":\"record\",\"name\":\"GitHubEvent\",\"namespace\":\"com.nexus.events\",\"fields\":[{\"name\":\"event_id\",\"type\":\"string\"},{\"name\":\"event_type\",\"type\":\"string\"},{\"name\":\"repo_name\",\"type\":\"string\"},{\"name\":\"actor_login\",\"type\":\"string\"},{\"name\":\"created_at\",\"type\":\"string\"},{\"name\":\"stars\",\"type\":[\"null\",\"long\"],\"default\":null}]}"
-}

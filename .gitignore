@@ -1,3 +1,4 @@
 /.env
 /hadoopbin
 /dir.sh
+.DS_Store
