@@ -84,7 +84,7 @@ ClickHouse (OLAP)              Neo4j + GDS (graph)
 ## Project structure
 
 ```
-oss-pulse/
+iceberg-lakehouse-ecosystem/
 ├── producer/
 │   ├── mock_producer.py      ← Avro producer → Kafka
 │   ├── Dockerfile
@@ -141,8 +141,8 @@ oss-pulse/
 **1. Clone and configure:**
 
 ```bash
-git clone https://github.com/yourusername/oss-pulse
-cd oss-pulse
+git clone https://github.com/muhammadhrazzaq/iceberg-lakehouse-ecosystem
+cd iceberg-lakehouse-ecosystem
 
 cp .env.example .env
 # Edit .env with your AWS credentials and Anthropic API key
@@ -165,8 +165,8 @@ docker compose ps   # wait until all show healthy
 **4. Install Python dependencies:**
 
 ```bash
-pyenv virtualenv 3.11.9 oss-pulse
-pyenv local oss-pulse
+pyenv virtualenv 3.11.9 iceberg-lakehouse-ecosystem
+pyenv local iceberg-lakehouse-ecosystem
 pip install -r requirements.txt
 ```
 
