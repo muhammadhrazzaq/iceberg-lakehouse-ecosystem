@@ -131,6 +131,8 @@ oss-pulse/
 ```
 
 ---
+### Superset Dashboard
+![Superset Dashboard](images/superset_dashboard.png)
 
 ## Quick start
 
